@@ -1,26 +1,38 @@
 import json
 
 with open('..\dictionary\cat_dictionary.json', 'r') as f:
-    dictionary = json.load(f)
+    cat_dictionary = json.load(f)
+
+with open('..\dictionary\dog_dictionary.json', 'r') as h:
+    dog_dictionary = json.load(h)
 
 with open('data.json', 'r') as g:
     data = json.load(g)
 
 current_list = data.get('tomas')
-final_sum = 0
+cat_final_sum = 0
+dog_final_sum = 0
 
 for x in current_list:
     y = x.split()
-    print(y)
-    sum = 0
+    #print(y)
+    cat_sum = 0
+    dog_sum = 0
     for word in y:
-        value = dictionary.get(word)
-        print (value)
-        if value is not None:
-            sum += value
-    average = sum/len(y)
-    final_sum += average
+        cat_value = cat_dictionary.get(word)
+        dog_value = dog_dictionary.get(word)
+        #print (value)
+        if cat_value is not None:
+            cat_sum += cat_value
+        if dog_value is not None:
+            dog_sum += dog_value
+    cat_average = cat_sum/len(y)
+    dog_average = dog_sum/len(y)
+    cat_final_sum += cat_average
+    dog_final_sum += dog_average
 
-final_average = final_sum/len(current_list)
+cat_final_average = cat_final_sum/len(current_list)
+dog_final_average = dog_final_sum/len(current_list)
 
-print(final_average)
+print("cat {}".format(cat_final_average))
+print("dog {}".format(dog_final_average))
