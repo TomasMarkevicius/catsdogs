@@ -1,6 +1,6 @@
 import json
 
-with open('dictionary.json', 'r') as f:
+with open('..\dictionary\cat_dictionary.json', 'r') as f:
     dictionary = json.load(f)
 
 with open('data.json', 'r') as g:
@@ -15,6 +15,7 @@ for x in current_list:
     sum = 0
     for word in y:
         value = dictionary.get(word)
+        print (value)
         if value is not None:
             sum += value
     average = sum/len(y)
