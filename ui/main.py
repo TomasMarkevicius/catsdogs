@@ -66,7 +66,7 @@ image = image.resize((300, 250), Image.ANTIALIAS)
 
 root.photo4 = ImageTk.PhotoImage(image)
 
-vlabel=tk.Label(root,image=root.photo)
+vlabel=tk.Label(root,image=root.photo3)
 vlabel.pack()
 
 b2=tk.Button(root,text="Check",command=change_pic)
@@ -77,6 +77,7 @@ entry = tk.Entry(root)
 entry.pack()
 
 text = tk.Label(root, text=photo_status)
+text.config(font=("Courier", 44))
 text.pack()
 
 root.mainloop()
